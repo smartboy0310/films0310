@@ -1,0 +1,119 @@
+.header {
+   padding: 50px 0;
+}
+.header-info {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.header-right__list {
+   display: flex;
+   align-items: center;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+.header-right__list__item + .header-right__list__item{
+   margin-left: 25px;
+}
+.header-right__list__item__link {
+   text-decoration: none;
+   color: #000;
+}
+.header-right {
+   display: flex;
+   align-items: center;
+}
+.header-right__list__item__form {
+   margin-left: 30px;
+}
+.header-right__list__item__form__select {
+   width: 120px;
+   padding: 3px 10px;
+}
+.header-right__list__item__form__btn {
+   padding: 5px 20px;
+   border: none;
+   border-radius: 5px;
+}
+.header-right__list__item__form__btn:hover {
+   color: #f3f3f3;
+   background: rgb(30,103,7);
+   background: linear-gradient(90deg, rgba(30,103,7,1) 31%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+}
+.header-right__list__item__form__btn:active{
+   color: #f3f3f3;
+   background: rgb(0,212,255);
+   background: linear-gradient(90deg, rgba(0,212,255,0.35898109243697474) 0%, rgba(9,9,121,1) 100%);
+}
+.list {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   column-gap: 10px;
+   row-gap: 25px;
+   list-style: none;
+}
+.list__item {
+   width: 30%;
+   height: 500px;
+   padding: 20px;
+   background-color: #f3f3f3;
+   border-radius: 5px;
+   text-align: center;
+}
+.list__item:hover {
+   box-shadow:  -5px 5px 20px 5px red, 5px 5px 20px 5px blue;
+   position: relative;
+}
+.film__heading {
+   height: 70px;
+   margin-bottom: 10px;
+}
+.film__image {
+   width: 100%;
+   height: 80%;
+   object-fit: contain;
+}
+
+.list__item__info {
+   display: none;
+   position: absolute;
+   padding: 40px;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   text-align: center;
+   background: rgb(2,0,36);
+   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,7,103,1) 64%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+   border-radius: 5px;
+   color: #f3f3f3;
+}
+.list__item__sublist {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 0;
+   list-style-type: none;
+   
+}
+.list__item__paragraph {
+   margin: 0;
+   margin-bottom: 30px;
+   
+}
+.list__item__time {
+   display: inline-block;
+   margin: 0;
+   margin-bottom: 30px;
+}
+.list__item__sublist__item + .list__item__sublist__item {
+   margin: 0;
+   margin-top: 20px;
+}
+.list__item:hover .list__item__info {
+   display: block;
+   
+}
