@@ -410,3 +410,6 @@ var films = [
 		genres: ['Music', 'Documentary'],
 	},
 ];
+films.forEach((film) => { 
+	 film.favorite = false;
+})

@@ -16,6 +16,8 @@ function renderFilms(arr, node) {
 		const newParagraph = document.createElement('p');
 		const newTime = document.createElement('time');
 		const newGenreList = document.createElement('ul');
+		const newBtn = document.createElement('button');
+		const newBtnImg = document.createElement('img')
 		
 		newHeading.textContent = film.title;
 		newParagraph.textContent =
@@ -40,12 +42,21 @@ function renderFilms(arr, node) {
 		newParagraph.setAttribute('class', 'list__item__paragraph');
 		newTime.setAttribute('class', 'list__item__time');
 		newGenreList.setAttribute('class', 'list__item__sublist');
-				
+		newBtn.setAttribute('class', 'film__btn');
+		newBtn.setAttribute('type', 'button')
+		newBtnImg.setAttribute('class', 'film__btn-image');
+		newBtnImg.setAttribute('src', './images/favorite.svg');
+		newBtnImg.setAttribute('alt', 'favorite icon');
+		newBtnImg.setAttribute('width', '20');
+		newBtnImg.setAttribute('height', '20');
+		
 		newLi.appendChild(newHeading);
 		newLi.appendChild(newImage);
+		newBtn.appendChild(newBtnImg);
 		newInfo.appendChild(newParagraph);
 		newInfo.appendChild(newTime);
 		newInfo.appendChild(newGenreList);
+		newInfo.appendChild(newBtn);
 		newLi.appendChild(newInfo);
 		
 		node.appendChild(newLi);
@@ -72,3 +83,12 @@ elForm.addEventListener('submit', function (evt) {
 		renderFilms(result, elList);
 	}
 })
+let elNewBtn = document.querySelectorAll('.film__btn');
+
+for(let i = 0; i < films.length; i++) {
+elNewBtn[i].addEventListener('click', function() {
+	films[i].favorite = true;
+	elNewBtn[i].classList.toggle('favorite-btn');
+})
+
+}

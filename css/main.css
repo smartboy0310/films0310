@@ -4,17 +4,20 @@
 .header-info {
    display: flex;
    align-items: center;
-   justify-content: space-between;
+   justify-content: space-around;
 }
 .header-right__list {
    display: flex;
    align-items: center;
    list-style-type: none;
+   width: 100%;
+   max-width: 210px;
    margin: 0;
+   margin-right: 10px;
    padding: 0;
 }
 .header-right__list__item + .header-right__list__item{
-   margin-left: 25px;
+   margin-left: 10px;
 }
 .header-right__list__item__link {
    text-decoration: none;
@@ -23,16 +26,46 @@
 .header-right {
    display: flex;
    align-items: center;
+   justify-content: space-between;
 }
 .header-right__list__item__form {
-   margin-left: 30px;
+   display: flex;
+   align-items: center;
+   width: 100%;
+   max-width: 650px;
+   margin-right: 10px;
+}
+.header-right__list__item__form__search-input {
+   width: 100%;
+   max-width: 150px;
+   height: 30px;
+   margin: 0;
+   margin-right: 10px;
+   padding: 0 5px;
 }
 .header-right__list__item__form__select {
-   width: 120px;
+   width: 100%;
+   max-width: 120px;
+   margin: 0;
+   margin-right: 10px;
    padding: 3px 10px;
 }
+.header-right__list__item__form__select-sort {
+   width: 100%;
+   max-width: 90px;
+   height: 30px;
+   text-align: center;
+   margin-right: 10px;
+}
 .header-right__list__item__form__btn {
-   padding: 5px 20px;
+   width: 100%;
+   max-width: 100px;
+   padding: 4px 20px;
+   border: none;
+   border-radius: 5px;
+}
+.header-right__btn {
+   padding: 4px 20px;
    border: none;
    border-radius: 5px;
 }
@@ -57,7 +90,7 @@
 }
 .list__item {
    width: 30%;
-   height: 500px;
+   height: 450px;
    padding: 20px;
    background-color: #f3f3f3;
    border-radius: 5px;
@@ -80,7 +113,7 @@
 .list__item__info {
    display: none;
    position: absolute;
-   padding: 40px;
+   padding: 20px;
    top: 0;
    left: 0;
    bottom: 0;
@@ -101,7 +134,7 @@
 }
 .list__item__paragraph {
    margin: 0;
-   margin-bottom: 30px;
+   margin-bottom: 20px;
    
 }
 .list__item__time {
@@ -116,4 +149,18 @@
 .list__item:hover .list__item__info {
    display: block;
    
+}
+.film__btn {
+   position: absolute;
+   right: 10px;
+   bottom: 10px;
+   border: none;
+   border-radius: 60%;
+}
+
+.film__btn:active {
+   background-color: red;
+}
+.favorite-btn {
+   background-color: red;
 }
