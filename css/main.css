@@ -157,9 +157,8 @@
    border: none;
    border-radius: 60%;
 }
-
-.film__btn:active {
-   background-color: red;
+.film__btn:hover {
+background-color: aqua;
 }
 .favorite-btn {
    background-color: red;

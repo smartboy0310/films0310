@@ -3,6 +3,9 @@
 const elForm = document.querySelector('.header-right__list__item__form');
 const elSelect = document.querySelector('.header-right__list__item__form__select');
 const elList = document.querySelector('.list');
+const elFavoriteBtn = document.querySelector('.header-right__btn');
+const elSort = document.querySelector('.header-right__list__item__form__select-sort');
+const elSearch = document.querySelector('.header-right__list__item__form__search-input');
 
 // Render element to html
 
@@ -67,28 +70,64 @@ function renderFilms(arr, node) {
 renderFilms(films, elList);
 genres(films);
 
+// Sort films 
+ const sortFilms = {
+	 0: (a, b) => {
+		 if(a.title > b.title) {
+			 return 1;
+		 }
+		 if(a.title < b.title) {
+			 return -1;
+		 }
+		 return 0;
+	 },
+	 1: (a, b) => {
+		if(a.title > b.title) {
+			return -1;
+		}
+		if(a.title < b.title) {
+			return 1;
+		}
+		return 0;
+	},
+	2: (a, b) => a.release_date - b.release_date, 
+	
+	3: (a, b) => b.release_date - a.release_date,
+ }
 // Listening form
 
 elForm.addEventListener('submit', function (evt) {
 	evt.preventDefault();
 	
 	const selectOption = elSelect.value.trim();
+	const searchInput = elSearch.value.trim();
+	const sortValue = elSort.value.trim();
 	
-	if(selectOption === 'allgenres') {
-		renderFilms(films, elList);
+	const searchResult = new RegExp(searchInput, 'gi');
+	// Filter flims
+	let resultFlims = []
+	if(selectOption === 'allgenres' && !searchInput) {
+		resultFlims = films;
 	}
 	else {
+		resultFlims = films
+		.filter(e => e.genres.includes(selectOption))
+		.filter(s => s.title.match(searchResult));
 		
-		let result = films.filter(e => e.genres.includes(selectOption));
-		renderFilms(result, elList);
 	}
+	resultFlims.sort(sortFilms[sortValue]);
+	renderFilms(resultFlims, elList);
 })
-let elNewBtn = document.querySelectorAll('.film__btn');
+
+const elNewBtn = document.querySelectorAll('.film__btn');
 
 for(let i = 0; i < films.length; i++) {
-elNewBtn[i].addEventListener('click', function() {
-	films[i].favorite = true;
-	elNewBtn[i].classList.toggle('favorite-btn');
-})
-
+	elNewBtn[i].addEventListener('click', () =>{
+		films[i].favorite = true;
+		elNewBtn[i].classList.toggle('favorite-btn');
+	})
 }
+elFavoriteBtn.addEventListener ('click', () =>{
+	const favoriteres = films.filter(e => e.favorite === true);
+	renderFilms(favoriteres, elList);
+} )
