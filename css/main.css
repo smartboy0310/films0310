@@ -69,6 +69,16 @@
    border: none;
    border-radius: 5px;
 }
+.header-right__btn:hover {
+   color: #f3f3f3;
+   background: rgb(30,103,7);
+   background: linear-gradient(90deg, rgba(30,103,7,1) 31%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%);
+}
+.header-right__btn:active {
+   color: #f3f3f3;
+   background: rgb(0,212,255);
+   background: linear-gradient(90deg, rgba(0,212,255,0.35898109243697474) 0%, rgba(9,9,121,1) 100%);
+}
 .header-right__list__item__form__btn:hover {
    color: #f3f3f3;
    background: rgb(30,103,7);
