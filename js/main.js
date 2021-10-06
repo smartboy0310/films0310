@@ -106,14 +106,17 @@ elForm.addEventListener('submit', function (evt) {
 	const searchResult = new RegExp(searchInput, 'gi');
 	// Filter flims
 	let resultFlims = []
-	if(selectOption === 'allgenres' && !searchInput) {
-		resultFlims = films;
+	if(selectOption === 'allgenres' && searchInput) {
+		resultFlims = films.filter(search => search.title.match(searchResult));;
+	}
+	else if (selectOption !== 'allgenres'){
+		resultFlims = films
+		.filter(film => film.genres.includes(selectOption))
+		.filter(search => search.title.match(searchResult));
+		
 	}
 	else {
-		resultFlims = films
-		.filter(e => e.genres.includes(selectOption))
-		.filter(s => s.title.match(searchResult));
-		
+		resultFlims = films;
 	}
 	resultFlims.sort(sortFilms[sortValue]);
 	renderFilms(resultFlims, elList);
