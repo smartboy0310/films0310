@@ -12,12 +12,12 @@
 	<section class="header">
 		<div class="container">
 			<div class="header-info">
-				<img class="header-logo" 
-				src="./images/cinema.png"
-				alt="Films icon" 
-				width="220"
-				height="50">
-				<div class="header-right">
+				<div class="header-top">
+					<img class="header-logo" 
+					src="./images/cinema.png"
+					alt="Films icon" 
+					width="220"
+					height="50">
 					<ul class="header-right__list">
 						<li class="header-right__list__item">
 							<a class="header-right__list__item__link" href="index.html" >HOME</a>
@@ -29,7 +29,9 @@
 							<a class="header-right__list__item__link" href="contact.html" >CONTACT</a>
 						</li>
 					</ul>
-					<form class="header-right__list__item__form ">
+				</div>
+				<div class="header-right">
+					<form class="header-right__list__item__form">
 						<input class="header-right__list__item__form__search-input"  type="search" placeholder="Search" autocomplete="off">
 						<select class="header-right__list__item__form__select">
 							<option value="allgenres">Allgenres</option>
@@ -42,20 +44,33 @@
 						</select>
 						<button class="header-right__list__item__form__btn" type="submit">Search</button>
 					</form>
-					<button class="header-right__btn" type="button">Favorite</button>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="hero">
 		<div class="container">
+			<ul class="bookmarks--list">
+				<li class="bookmarks--item">
+					<h2 class="bookmarks--list__heading">
+						Bookmarks
+					</h2>
+					<button class="bookmark--all__btn" type="button">Show bookmarks</button>
+					<button class="bookmark--back__btn" type="button">Back</button>
+				</li>
+			</ul>
 			<ul class="list"></ul>
 		</div>
 	</section>
-		
+	<div class="modal--film">
+		<div class="modal--film__info">
+			
+		</div>
+	</div>	
 	<script src="js/films.js"></script>
 	<script src="js/utils.js"></script>
 	<script src="js/genres.js"></script>
+	<script src="js/render.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
